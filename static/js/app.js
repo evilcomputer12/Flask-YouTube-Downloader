@@ -47,11 +47,16 @@ $(document).ready(function () {
         .done(function(data) {
                 event.preventDefault();
                 var urlname = data.download;
+                $('#successAlert').text("Download Complete !").show();
+				$('#errorAlert').hide();
                 $('#kopce').replaceWith("<button type='submit' class='btn btn-primary btn-lg btn-block' id='kopce'>Download</button>");
                 window.location.replace("/download/"+urlname);
-        });
+        }) 
+        .fail(function(data){
+            $('#errorAlert').text("There was an error during download. Try again !").show();
+			$('successAlert').hide();
+        }); 
         event.preventDefault();
-
     });
 
   });
