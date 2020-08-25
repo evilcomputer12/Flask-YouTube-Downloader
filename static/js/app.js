@@ -53,8 +53,8 @@ $(document).ready(function () {
                 window.location.replace("/download/"+urlname);
         }) 
         .fail(function(data){
-            $('#errorAlert').text("There was an error during download. Try again !").show();
-			$('successAlert').hide();
+            	$('#errorAlert').text("There was an error during download. Try again !").show();
+		$('successAlert').hide();
         }); 
         event.preventDefault();
     });
