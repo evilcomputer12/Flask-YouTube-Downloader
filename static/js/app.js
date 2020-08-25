@@ -61,6 +61,7 @@ $(document).ready(function () {
             	$('#errorAlert').text("There was an error during download. Try again !").show();
 		$('.loader').replaceWith("<div class='loader' style='display:none;'></div>");
 		$('successAlert').hide();
+		$('#kopce').replaceWith("<button type='submit' class='btn btn-primary btn-lg btn-block' id='kopce'>Download</button>");
         }); 
         event.preventDefault();
     });
