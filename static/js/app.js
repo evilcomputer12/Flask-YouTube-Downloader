@@ -50,10 +50,12 @@ $(document).ready(function () {
                 $('#successAlert').text("Download Complete !").show();
 				$('#errorAlert').hide();
                 $('#kopce').replaceWith("<button type='submit' class='btn btn-primary btn-lg btn-block' id='kopce'>Download</button>");
+		$('.loader').replaceWith("<div class='loader' style='display:none;'></div>");
                 window.location.replace("/download/"+urlname);
         }) 
         .fail(function(data){
             	$('#errorAlert').text("There was an error during download. Try again !").show();
+		$('.loader').replaceWith("<div class='loader' style='display:none;'></div>");
 		$('successAlert').hide();
         }); 
         event.preventDefault();
