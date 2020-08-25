@@ -14,7 +14,9 @@ $(document).ready(function () {
             	$('button[type="submit"]').attr('disabled', true);
             	$("#input_error").show();
 		$('#successAlert').hide();
+		$('#successAlert').text("Download Complete !").hide();
 		$('#errorAlert').hide();
+		$('#errorAlert').text("Download Complete !").hide();
         }
     });
     function validateYouTubeUrl() {
