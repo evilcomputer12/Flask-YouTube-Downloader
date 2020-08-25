@@ -35,7 +35,7 @@ $(document).ready(function () {
 
     $('form').on('submit', function(event) {
         $('#kopce').replaceWith("<button type='submit' class='btn btn-primary btn-lg btn-block' id='kopce'disabled><i class='fa fa-refresh fa-spin'></i>Downloading...</button>");
-        $('#name').text('');
+	$('.loader').replaceWith("<div class='loader' style='display:block;'></div>">);
 
         $.ajax({
             data : {
