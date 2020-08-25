@@ -13,7 +13,7 @@ scheduler = APScheduler()
 def index():
 	return render_template('index.html')
 
-@app.route('/process', methods=['POST', 'GET'])
+@app.route('/process', methods=['POST'])
 def process():
 	link = request.form['link']
 	print(link)
@@ -60,7 +60,7 @@ def process():
 
 	return jsonify({'nothing': 'nothing here'})
 
-@app.route('/download/<filename>', methods=['POST', 'GET'])
+@app.route('/download/<filename>')
 def download(filename):
 	fn='media/'+filename
 	return send_file(fn, as_attachment=True)
