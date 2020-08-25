@@ -15,20 +15,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-#successAlert {
-  margin-left: auto;
-  margin-right: auto;
-  display:none; 
-  text-align: center; 
-  max-width:800px;
-}
-#errorAlert {
-  margin-left: auto;
-  margin-right: auto;
-  display:none; 
-  text-align: center; 
-  max-width:800px;
-}
 .loader {
   display: none;
   margin-left: auto;
