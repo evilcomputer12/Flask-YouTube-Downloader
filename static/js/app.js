@@ -11,8 +11,10 @@ $(document).ready(function () {
 
         }
         else {
-            $('button[type="submit"]').attr('disabled', true);
-            $("#input_error").show();
+            	$('button[type="submit"]').attr('disabled', true);
+            	$("#input_error").show();
+		$('#successAlert').hide();
+		$('#errorAlert').hide();
         }
     });
     function validateYouTubeUrl() {
@@ -48,7 +50,7 @@ $(document).ready(function () {
                 event.preventDefault();
                 var urlname = data.download;
                 $('#successAlert').text("Download Complete !").show();
-				$('#errorAlert').hide();
+		$('#errorAlert').hide();
                 $('#kopce').replaceWith("<button type='submit' class='btn btn-primary btn-lg btn-block' id='kopce'>Download</button>");
 		$('.loader').replaceWith("<div class='loader' style='display:none;'></div>");
                 window.location.replace("/download/"+urlname);
