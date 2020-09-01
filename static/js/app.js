@@ -1,6 +1,8 @@
 $(document).ready(function () {
     $('button[type="submit"]').attr('disabled', true);
     $('input[type="text"]').on('input propertychange', function () {
+	navigator.clipboard.readText().then(
+    	clipText => document.querySelector("#link").innerText += clipText);
         var text_value = $('input[name="link"]').val();
         var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
         var p1 = /^.*(youtu.be\/|list=)([^#\&\?]*).*/;
