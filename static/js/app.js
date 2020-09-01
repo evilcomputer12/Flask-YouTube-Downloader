@@ -69,8 +69,4 @@ $(document).ready(function () {
         }); 
         event.preventDefault();
     });
-	async function PasteFunction() {
-  	const text = await navigator.clipboard.readText();
-  	document.getElementById("link").value = text;
-	}
   });
