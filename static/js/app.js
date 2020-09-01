@@ -14,7 +14,7 @@ $(document).ready(function () {
             	$('button[type="submit"]').attr('disabled', true);
             	$("#input_error").show();
 		$('#successAlert').hide();
-		$('#successAlert').text("Download Complete !").hide();
+		$('#errorAlert').text("There was an error during download. Try again !").hide();
 		$('#errorAlert').hide();
 		$('#errorAlert').text("Download Complete !").hide();
         }
@@ -40,6 +40,10 @@ $(document).ready(function () {
     $('form').on('submit', function(event) {
         $('#kopce').replaceWith("<button type='submit' class='btn btn-primary btn-lg btn-block' id='kopce'disabled><i class='fa fa-refresh fa-spin'></i>Downloading...</button>");
 	$('.loader').replaceWith("<div class='loader' style='display:block;'></div>");
+	$('#successAlert').hide();
+	$('#errorAlert').text("There was an error during download. Try again !").hide();
+	$('#errorAlert').hide();
+	$('#errorAlert').text("Download Complete !").hide();
 
         $.ajax({
             data : {
