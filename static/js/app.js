@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('button[type="submit"]').attr('disabled', true);
-    $('input[type="text"]').on('keyup', function () {
+    $('input[type="text"]').on('input propertychange', function () {
         var text_value = $('input[name="link"]').val();
         var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
         var p1 = /^.*(youtu.be\/|list=)([^#\&\?]*).*/;
