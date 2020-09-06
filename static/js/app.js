@@ -6,7 +6,7 @@ $(document).ready(function () {
         var p1 = /^.*(youtu.be\/|list=)([^#\&\?]*).*/;
 	var match = text_value.match(p);
 	var match1 = text_value.match(p1);
-        if ((match && match[2].length == 11) || match1) {
+        if (match && match[2].length == 11) {
             $('button[type="submit"]').attr('disabled', false);
             $("#input_error").hide();
             validateYouTubeUrl();
