@@ -3,9 +3,9 @@ $(document).ready(function () {
     $('input[type="text"]').on('input propertychange', function () {
         var text_value = $('input[name="link"]').val();
         var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
-        var p1 = /^.*(youtu.be\/|list=)([^#\&\?]*).*/;
+	var p2 = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|playlist\?v=|playlist\?.+&v=))((\w|-){34})(?:\S+)?$/
 	var match = text_value.match(p);
-	var match1 = text_value.match(p1);
+	var match1 = text_value.match(p2);
         if (match || match1) {
             $('button[type="submit"]').attr('disabled', false);
             $("#input_error").hide();
@@ -28,11 +28,14 @@ $(document).ready(function () {
             var match = url.match(regExp);
             var p1 = /^.*(youtu.be\/|list=)([^#\&\?]*).*/;
             var match1 = url.match(p1);
-            if (match || match1) {
+            if (match) {
                 // Do anything for being valid
                 // if need to change the url to embed url then use below line
                 $('#videoObject').attr('src', 'https://www.youtube.com/embed/' + match[2] + '?autoplay=1&enablejsapi=1');
-            } else {
+            } 
+	    else if (match1) {
+		$('#videoObject').attr('src', 'https://www.youtube.com/embed/videoseries?list=' + match1[2] + '?autoplay=1&enablejsapi=1');  
+	    }else {
                 alert('not valid');
                 // Do anything for not being valid
             }
