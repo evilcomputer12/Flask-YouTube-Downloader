@@ -3,7 +3,7 @@ $(document).ready(function () {
     $('input[type="text"]').on('input propertychange', function () {
         var text_value = $('input[name="link"]').val();
         var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
-	var p2 = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|playlist\?v=|playlist\?.+&v=))((\w|-){34})(?:\S+)?$/
+	var p2 = /^.*(youtu.be\/|list=)([^#\&\?]*).*/;
 	var match = text_value.match(p);
 	var match1 = text_value.match(p2);
         if (match || match1) {
