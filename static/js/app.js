@@ -6,7 +6,7 @@ $(document).ready(function () {
         var p1 = /^.*(youtu.be\/|list=)([^#\&\?]*).*/;
 	var match = text_value.match(p);
 	var match1 = text_value.match(p1);
-        if ((match || match1) && (match[2].length == 11 || match1[2].length == 34)) {
+        if (match || match1) {
             $('button[type="submit"]').attr('disabled', false);
             $("#input_error").hide();
             validateYouTubeUrl();
@@ -28,7 +28,7 @@ $(document).ready(function () {
             var match = url.match(regExp);
             var p1 = /^.*(youtu.be\/|list=)([^#\&\?]*).*/;
             var match1 = url.match(p1);
-            if ((match || match1) && (match[2].length == 11 || match1[2].length == 34)) {
+            if (match || match1) {
                 // Do anything for being valid
                 // if need to change the url to embed url then use below line
                 $('#videoObject').attr('src', 'https://www.youtube.com/embed/' + match[2] + '?autoplay=1&enablejsapi=1');
